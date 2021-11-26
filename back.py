@@ -33,3 +33,20 @@ test[2:4] = [] #remove from at the beginning
 test[:2] = ["hello" , "world"]
 print(test)
 
+
+# In addition
+var = "Hello world"
+print(var)
+if var:
+    print(True)
+else:
+    print(False)
+
+List = ['any', 'data', True, 6, 'type', 'can', {'find': 'here'}]
+Dict = {
+    'name': "Saidali",
+    'surname': "Zikirillayev",
+    'isMarried': False,
+    'language': "Python"
+}
+print(List)
