@@ -100,6 +100,156 @@ friends = ['Said', 'Ali', 'Xon']
 for a in friends:
     print(a)
 
-text1 = "Saidali"
-for k in text1:
-    print(k)
+# text1 = "Saidali"
+# for k in text1:
+#     print(k)
+
+
+# # boolean
+# # 1 true
+# # 2 false
+
+# # and while now
+# # while loop
+# for i in range(10):
+#     print(0)
+
+# ab = 5
+# while ab == 5:
+#     print(2)
+#     ab = 0
+
+
+# # if statements
+# v = 5
+# if 5 * 3 == 15:
+#     print("true")
+
+# z = "welcome"
+# if  z == "new":
+#     print("bye")
+# elif z == "welcome":
+#     print("allow")
+# elif z == "":
+#     print("empty")
+# else :
+#     print("I could not find")
+
+
+
+#     # functions
+# def test():
+#     print('I am here')
+# test()
+
+# def fun(f, g = 12):
+#    print(f + g)
+# fun(3, 21)
+
+
+# # types of the functions
+# # fruitful vs void
+# def flue():
+#     a = 32
+#     b = 32
+#     d = a + b
+#     return d
+
+# r = flue()
+# print(r) 
+
+# def block(o , p ):
+#     j = o+p
+#     return j
+
+# t = block(1,2)
+# print(t)
+
+# # void functionga tushunmadim
+
+# # global and local scope
+
+# a = 9
+
+# def misol():
+#     global a 
+#     a = a + 4 
+#     b = 8
+#     print(a)
+    
+# misol()
+
+# # module
+# # package - math matematika package, pyg pygame
+# # library
+
+# # import pygame 
+# import turtle
+
+# wn = turtle.Screen()
+# test == turtle.Turtle()
+# # test.forward(50)
+# test.left(90)
+
+
+
+# wn.mainloop()
+
+
+
+
+import turtle
+def func1():
+    tosh.forward(50)
+
+def func2():
+    tosh.left(45)
+
+def func3():
+    tosh.right(45)
+
+def func4():
+    wn.bye()
+
+def func5():
+    global pensz
+    pensz += 1
+    if pensz < 10:
+        tosh.pensize(pensz)
+    else:
+        tosh.pensize(10)
+
+def func6():
+    global pensz
+    pensz -= 1
+    if pensz > 0:
+        tosh.pensize(pensz)
+    else:
+        tosh.pensize(1)
+def main():
+    global tosh
+    global wn
+    global pensz 
+    pensz = 1
+    wn = turtle.Screen()
+    wn.setup(700,500)
+    wn.title("toshiba")
+    wn.bgcolor("green")
+
+
+    tosh = turtle.Turtle()
+    # tosh.pencolor("red")
+    # tosh.pensize(5)
+    tosh.pensize(pensz)
+
+    wn.onkey(func1, "Up")
+    wn.onkey(func2, "Left")
+    wn.onkey(func3, "Right")
+    wn.onkey(func4, "q")
+    wn.onkey(func5, "a")
+    wn.onkey(func6, "s")
+
+    wn.listen()
+    wn.mainloop()
+
+main()
