@@ -200,6 +200,7 @@ for a in friends:
 
 import turtle
 def func1():
+    tosh.pencolor(colors[color])
     tosh.forward(50)
 
 def func2():
@@ -214,27 +215,67 @@ def func4():
 def func5():
     global pensz
     pensz += 1
-    if pensz < 10:
-        tosh.pensize(pensz)
-    else:
-        tosh.pensize(10)
-
+    tosh.pensize(pensz)
+    
 def func6():
     global pensz
     pensz -= 1
     if pensz > 0:
         tosh.pensize(pensz)
     else:
-        tosh.pensize(1)
+        pensz = 1
+        tosh.pensize(pensz)
+        
+    print(pensz)
+
+def func7():
+    global ruchka
+    if ruchka == 1:
+        tosh.penup()
+        ruchka = 0
+    else:
+        tosh.pendown()
+        ruchka = 1
+
+def func8():
+    tosh.pencolor("green")
+    tosh.back(50)
+
+def func9():
+    global color
+    colors = ["yellow" , "orange" , "red" , "blue"]
+
+    tosh.pencolor(colors[color])
+    if color > 2:
+        color = 0
+    else:
+        color += 1
+    print(color)
+
+
+
+def func10(text, x , y):
+    meeting = turtle.Turtle()
+    meeting.hideturtle
+    meeting.penup()
+    meeting.goto(x, y)
+    meeting.write(text , font=10)
+
 def main():
     global tosh
     global wn
     global pensz 
+    global ruchka
+    global color
+    global colors
+    color = 0
     pensz = 1
+    ruchka = 1
     wn = turtle.Screen()
     wn.setup(700,500)
     wn.title("toshiba")
     wn.bgcolor("green")
+    colors = ["yellow" , "orange" , "red" , "blue"]
 
 
     tosh = turtle.Turtle()
@@ -242,12 +283,26 @@ def main():
     # tosh.pensize(5)
     tosh.pensize(pensz)
 
+    func10("'Up' - go forward" , 450, 300)
+    func10("'Down' - delete" , 450, 275)
+    func10("'Right' - turn right" , 450, 250)
+    func10("'Left' - turn left" , 450, 225)
+    func10("'Space' - carry the pen and down" , 450, 200)
+    func10("'a' - making bigger" , 450, 175)
+    func10("'s' - making smaller" , 450, 150)
+    func10("'d' - change the color" , 450, 125)
+    
+
     wn.onkey(func1, "Up")
     wn.onkey(func2, "Left")
     wn.onkey(func3, "Right")
     wn.onkey(func4, "q")
     wn.onkey(func5, "a")
     wn.onkey(func6, "s")
+    wn.onkey(func7, "space")
+    wn.onkey(func8, "Down")
+    wn.onkey(func9, "d")
+
 
     wn.listen()
     wn.mainloop()
